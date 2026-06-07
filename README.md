@@ -15,7 +15,7 @@ Your job: find bugs, file clear reports, and verify fixes. Real work. Real produ
 ## Getting started
 
 1. **Read the workflow doc first** → [docs/qa-apprentice-workflow.md](docs/qa-apprentice-workflow.md)
-2. **Go to the board** → link coming from Trinity
+2. **Go to the board** → [QA Board](https://github.com/orgs/Repped-Labs/projects/7)
 3. **Pick up a task** from the Ready for QA column
 4. **Get your staging access** from Trinity — you need a Circle community invite
 
