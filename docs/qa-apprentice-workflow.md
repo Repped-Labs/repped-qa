@@ -6,7 +6,7 @@ This is how QA works on this project. Read this before you touch anything.
 
 ## What you're testing
 
-You are blackbox testing widgets embedded inside a **Circle community** on a staging environment. You test as a real logged-in Circle member — you have no access to the source code, no access to the private codebase, and no access to production.
+You are blackbox testing widgets embedded inside a **Circle community** on a QA community. You test as a real logged-in Circle member — you have no access to the source code, no access to the private codebase, and no access to production.
 
 Everything you find goes into a GitHub Issue in **this repo** using the Bug Report template.
 Everything you need to test is a GitHub Issue in **this repo** using the QA Task template.
@@ -71,7 +71,7 @@ Go to the **GitHub Project board** linked in the repo. This is your home base.
 3. Open the issue, read everything — especially **Out of scope**
 4. Assign yourself to the issue
 5. Change the label to `status: in qa` — it moves to the In QA column automatically
-6. Go to the staging Circle community and test
+6. Go to the QA community and test
 
 **One task at a time.** Finish what you pick up before grabbing another.
 
@@ -82,7 +82,7 @@ Go to the **GitHub Project board** linked in the repo. This is your home base.
 You are doing **blackbox testing**. That means:
 
 - Test from a real user's perspective only
-- Log into the staging Circle community with your Circle account
+- Log into the QA community with your Circle account
 - Navigate to the post or space Trinity linked in the QA task
 - Go beyond the listed areas — the task gives you a starting point, not an exhaustive list
 

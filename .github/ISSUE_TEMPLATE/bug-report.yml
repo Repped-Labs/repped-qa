@@ -30,7 +30,7 @@ body:
     id: staging-url
     attributes:
       label: Staging URL
-      description: The exact Circle page URL where you found this. Always staging — never production.
+      description: The exact Circle page URL where you found this. Always the QA community — never production.
       placeholder: "https://circles.reppedlabs.org/c/qa-staging/..."
     validations:
       required: true
@@ -41,7 +41,7 @@ body:
       label: Steps to Reproduce
       description: Numbered steps. Start from the beginning. Someone who has never used this widget should be able to follow your steps and reach the same bug.
       placeholder: |
-        1. Log into the staging Circle community
+        1. Log into the QA community
         2. Open the Journey Map widget in [post name]
         3. Check the first task in Sprint 1
         4. Reload the page
