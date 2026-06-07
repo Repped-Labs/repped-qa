@@ -1,0 +1,109 @@
+name: Bug Report
+description: File a bug found during QA testing
+labels: ["type: bug", "status: needs fix"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for every bug you find. Fill in every field — incomplete reports get sent back.
+        Match the severity definitions from your Treehouse training.
+
+  - type: input
+    id: title-summary
+    attributes:
+      label: One-line summary
+      description: Finish this sentence — "When I [action], [thing] happens instead of [expected]."
+      placeholder: "When I check a task and reload, the checkbox resets instead of staying checked."
+    validations:
+      required: true
+
+  - type: input
+    id: staging-url
+    attributes:
+      label: Staging URL
+      description: The exact URL where you found this bug.
+      placeholder: "https://repped-labs-git-branch-repped.vercel.app/..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Numbered steps. Someone else should be able to follow these and see the same bug.
+      placeholder: |
+        1. Open the journey widget at [URL]
+        2. Log in as [test account]
+        3. Check the first task in Sprint 1
+        4. Reload the page
+        5. Observe the task is unchecked
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+      description: What should have happened?
+      placeholder: "The task should remain checked after reload."
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+      description: What actually happened?
+      placeholder: "The task checkbox resets to unchecked on every reload."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How bad is this? Use definitions from your Treehouse training.
+      options:
+        - "Critical — blocks core functionality, no workaround"
+        - "High — major feature broken, workaround exists but painful"
+        - "Medium — feature partially broken, workaround exists"
+        - "Low — minor issue, cosmetic, or edge case"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: reproducible
+    attributes:
+      label: Reproducibility
+      options:
+        - "Always — happens every time I follow the steps"
+        - "Often — happens most of the time"
+        - "Sometimes — intermittent, hard to reproduce consistently"
+        - "Once — only happened one time"
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Browser, OS, screen size — anything that might matter.
+      placeholder: |
+        Browser: Chrome 124
+        OS: macOS 14.4
+        Screen: 1440px desktop
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Screenshots or recording
+      description: Drag and drop screenshots here. Loom recording strongly preferred for anything interactive.
+      placeholder: "Attach screenshot or paste Loom link here."
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes
+      description: Anything else that might help — what you tried, related bugs, edge cases you noticed.

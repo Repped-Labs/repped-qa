@@ -1,0 +1,33 @@
+name: Stale QA Detection
+
+on:
+  schedule:
+    - cron: '0 9 * * 1-5'  # runs weekdays at 9am UTC
+  workflow_dispatch:         # allows manual trigger from Actions tab
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v9
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+          # QA tasks sitting in "ready for qa" for 3+ days get flagged
+          stale-issue-label: 'stale'
+          stale-issue-message: >
+            This QA task has been waiting for 3+ days with no activity.
+            If you can pick this up, assign yourself and change the label to `status: in qa`.
+            If this is no longer needed, close it with a comment explaining why.
+          days-before-issue-stale: 3
+          days-before-issue-close: -1   # never auto-close — Trinity decides
+
+          # Only flag QA tasks and bug reports, not everything
+          only-labels: 'status: ready for qa'
+
+          # Don't touch PRs
+          days-before-pr-stale: -1
+          days-before-pr-close: -1
+
+          # Exempt high priority items from stale — those stay visible regardless
+          exempt-issue-labels: 'priority: high'

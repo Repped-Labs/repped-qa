@@ -1,0 +1,69 @@
+name: QA Task
+description: Something ready for blackbox testing (created by Trinity)
+labels: ["type: qa task", "status: ready for qa"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is a QA task. Pick it up, assign yourself, and test what's described below.
+        File a separate Bug Report for every issue you find and link it back here.
+        When you're done testing — pass or fail — close this task with a comment summarizing what you tested and what you found.
+
+  - type: input
+    id: feature
+    attributes:
+      label: What to test
+      description: Feature, change, or area that needs blackbox testing.
+      placeholder: "Journey widget — task completion persistence"
+    validations:
+      required: true
+
+  - type: input
+    id: staging-url
+    attributes:
+      label: Staging URL
+      description: Where to test this. Always use staging — never production.
+      placeholder: "https://repped-labs-git-branch-repped.vercel.app"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - "High — test this first"
+        - "Medium — test after high priority items"
+        - "Low — test when capacity allows"
+    validations:
+      required: true
+
+  - type: textarea
+    id: test-areas
+    attributes:
+      label: Areas to test
+      description: Specific things to check. Not exhaustive — use your QA judgment to go deeper.
+      placeholder: |
+        - Check a task and reload — does it persist?
+        - Check a task on one browser, open in another — does it sync?
+        - Add a note and reload — does it save?
+        - Try with a valid memberId and without one — both should behave correctly
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context and credentials
+      description: Anything the QA tester needs to know — test accounts, known limitations, what changed.
+      placeholder: |
+        Test account: use your Circle login
+        memberId gets injected automatically from Circle session
+        This is a new feature — there is no prior behavior to compare against
+
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Out of scope
+      description: What NOT to test in this task. Helps interns stay focused.
+      placeholder: "Do not test the admin dashboard — that is a separate QA task."
