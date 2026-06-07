@@ -5,15 +5,24 @@ body:
   - type: markdown
     attributes:
       value: |
-        Use this template for every bug you find. Fill in every field — incomplete reports get sent back.
-        Match the severity definitions from your Treehouse training.
+        Use the same format you practiced in the program. Fill in every field — incomplete reports get sent back.
+        Run the checklist in [docs/bug-report-checklist.md](../docs/bug-report-checklist.md) before you submit.
 
   - type: input
-    id: title-summary
+    id: title
     attributes:
-      label: One-line summary
-      description: Finish this sentence — "When I [action], [thing] happens instead of [expected]."
-      placeholder: "When I check a task and reload, the checkbox resets instead of staying checked."
+      label: Title
+      description: One sentence. What is broken and what went wrong. Start with the feature — not "It" or "The". Example — "Login button does not respond when email field is empty."
+      placeholder: "Task checkbox does not persist after page reload."
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      description: The specific page, section, or feature where the bug occurs.
+      placeholder: "Sprint 1 journey widget — task list"
     validations:
       required: true
 
@@ -21,30 +30,30 @@ body:
     id: staging-url
     attributes:
       label: Staging URL
-      description: The exact URL where you found this bug.
-      placeholder: "https://repped-labs-git-branch-repped.vercel.app/..."
+      description: The exact Circle page URL where you found this. Always staging — never production.
+      placeholder: "https://circles.reppedlabs.org/c/qa-staging/..."
     validations:
       required: true
 
   - type: textarea
     id: steps
     attributes:
-      label: Steps to reproduce
-      description: Numbered steps. Someone else should be able to follow these and see the same bug.
+      label: Steps to Reproduce
+      description: Numbered steps. Start from the beginning. Someone who has never used this widget should be able to follow your steps and reach the same bug.
       placeholder: |
-        1. Open the journey widget at [URL]
-        2. Log in as [test account]
+        1. Log into the staging Circle community
+        2. Open the Journey Map widget in [post name]
         3. Check the first task in Sprint 1
         4. Reload the page
-        5. Observe the task is unchecked
+        5. Observe the task is now unchecked
     validations:
       required: true
 
   - type: textarea
     id: expected
     attributes:
-      label: Expected result
-      description: What should have happened?
+      label: Expected Result
+      description: What should have happened based on normal behavior.
       placeholder: "The task should remain checked after reload."
     validations:
       required: true
@@ -52,8 +61,8 @@ body:
   - type: textarea
     id: actual
     attributes:
-      label: Actual result
-      description: What actually happened?
+      label: Actual Result
+      description: What actually happened.
       placeholder: "The task checkbox resets to unchecked on every reload."
     validations:
       required: true
@@ -62,24 +71,30 @@ body:
     id: severity
     attributes:
       label: Severity
-      description: How bad is this? Use definitions from your Treehouse training.
+      description: Choose one. Add a one-sentence reason in the field below.
       options:
-        - "Critical — blocks core functionality, no workaround"
-        - "High — major feature broken, workaround exists but painful"
-        - "Medium — feature partially broken, workaround exists"
-        - "Low — minor issue, cosmetic, or edge case"
+        - "Critical — app crashes or core feature is completely broken"
+        - "High — major feature does not work, no workaround"
+        - "Medium — feature works but behaves incorrectly, workaround exists"
+        - "Low — minor issue: visual, cosmetic, or edge case"
     validations:
       required: true
 
-  - type: dropdown
-    id: reproducible
+  - type: input
+    id: severity-reason
     attributes:
-      label: Reproducibility
-      options:
-        - "Always — happens every time I follow the steps"
-        - "Often — happens most of the time"
-        - "Sometimes — intermittent, hard to reproduce consistently"
-        - "Once — only happened one time"
+      label: Severity reason
+      description: One sentence explaining why you chose that level.
+      placeholder: "Task completion is core to the journey widget — losing it on every reload makes the widget unusable."
+    validations:
+      required: true
+
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Workaround
+      description: A way to complete the task even though the bug is present. If one exists, describe it. If not, write "None."
+      placeholder: "None."
     validations:
       required: true
 
@@ -87,23 +102,23 @@ body:
     id: environment
     attributes:
       label: Environment
-      description: Browser, OS, screen size — anything that might matter.
-      placeholder: |
-        Browser: Chrome 124
-        OS: macOS 14.4
-        Screen: 1440px desktop
+      description: Browser and operating system. Example — "Chrome on Mac" or "Safari on iPhone."
+      placeholder: "Chrome 124 on macOS"
     validations:
       required: true
 
   - type: textarea
     id: evidence
     attributes:
-      label: Screenshots or recording
-      description: Drag and drop screenshots here. Loom recording strongly preferred for anything interactive.
-      placeholder: "Attach screenshot or paste Loom link here."
+      label: Screenshot
+      description: One screenshot showing the moment the bug occurs. Add an arrow or circle if it helps. Loom recording strongly preferred for interactive bugs — paste the link here.
+      placeholder: "Attach screenshot or paste Loom link."
+    validations:
+      required: true
 
-  - type: textarea
-    id: notes
+  - type: input
+    id: related-task
     attributes:
-      label: Additional notes
-      description: Anything else that might help — what you tried, related bugs, edge cases you noticed.
+      label: Related QA task
+      description: The issue number of the QA task this bug was found in.
+      placeholder: "#12"
