@@ -1,4 +1,4 @@
-# QA Intern Workflow
+# QA Apprentice Workflow
 
 This is how QA works on this project. Read this before you touch anything.
 

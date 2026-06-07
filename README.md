@@ -1,6 +1,6 @@
 # Repped Labs — QA Board
 
-This is the public QA repo for Repped Labs. If you are a QA intern, this is where you work.
+This is the public QA repo for Repped Labs. If you are a QA apprentice, this is where you work.
 
 ---
 
@@ -14,7 +14,7 @@ Your job: find bugs, file clear reports, and verify fixes. Real work. Real produ
 
 ## Getting started
 
-1. **Read the workflow doc first** → [docs/qa-intern-workflow.md](docs/qa-intern-workflow.md)
+1. **Read the workflow doc first** → [docs/qa-apprentice-workflow.md](docs/qa-apprentice-workflow.md)
 2. **Go to the board** → link coming from Trinity
 3. **Pick up a task** from the Ready for QA column
 4. **Get your staging access** from Trinity — you need a Circle community invite

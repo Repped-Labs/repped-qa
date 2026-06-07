@@ -65,5 +65,5 @@ body:
     id: out-of-scope
     attributes:
       label: Out of scope
-      description: What NOT to test in this task. Helps interns stay focused.
+      description: What NOT to test in this task. Helps apprentices stay focused.
       placeholder: "Do not test the admin dashboard — that is a separate QA task."
