@@ -8,8 +8,7 @@ This is how QA works on this project. Read this before you touch anything.
 
 You are blackbox testing widgets embedded inside a **Circle community**. You test as a real logged-in Circle member — you have no access to the source code, no access to the private codebase, and no access to production.
 
-Everything you find goes into a GitHub Issue in **this repo** using the Bug Report template.
-Everything you need to test is a GitHub Issue in **this repo** using the QA Task template.
+Everything you find goes into a **comment on the QA task issue** and a separate **Bug Report issue** for each bug.
 
 ---
 
@@ -18,7 +17,7 @@ Everything you need to test is a GitHub Issue in **this repo** using the QA Task
 | Thing | How you get it |
 |---|---|
 | This GitHub repo | You're already here — it's public |
-| QA community | Trinity gives you the invite link |
+| QA community | [qa.reppedlabs.org](https://qa.reppedlabs.org/feed) |
 | Your Circle login | Use the account Trinity set up for you |
 
 You do not need — and will not get — access to the private codebase. Blackbox means blackbox.
@@ -29,27 +28,29 @@ You do not need — and will not get — access to the private codebase. Blackbo
 
 Go to the **[QA Board](https://github.com/orgs/Repped-Labs/projects/7)**. This is your home base.
 
-Every task on the board is open. Pick up anything in **Ready for QA** — there is no sprint gating, no level requirement. If it's on the board, you can test it.
+Every task on the board is open. Pick up anything in **Ready for QA** — no gating, no prerequisites.
 
 **Columns:**
 
 | Column | What it means |
 |---|---|
 | **Ready for QA** | Unclaimed — pick it up |
-| **In QA** | You're actively testing this |
-| **Needs Fix** | You found bugs. Waiting on Trinity. |
-| **QA Passed** | Tested and signed off. Done. |
+| **In QA** | Actively being tested |
+| **Needs Fix** | Bugs found — Trinity is on it |
+| **QA Passed** | Signed off and done |
+
+Trinity manages column moves and closing. Your job is to test and report.
 
 ---
 
 ## How to pick up a task
 
 1. Go to the board → **Ready for QA** column
-2. Start with `priority: high` items first, then anything unassigned
+2. Start with `priority: high` items first
 3. Open the issue, read the full description and **Out of scope** section
 4. Assign yourself
-5. Change the label to `status: in qa` — it moves columns automatically
-6. Open the QA community and start testing
+5. Change the label to `status: in qa`
+6. Go to [qa.reppedlabs.org](https://qa.reppedlabs.org/feed) and test
 
 **One task at a time.** Finish what you pick up before grabbing another.
 
@@ -57,12 +58,11 @@ Every task on the board is open. Pick up anything in **Ready for QA** — there 
 
 ## How to test
 
-You are doing **blackbox testing**:
+You are doing **blackbox testing** — you see exactly what a real member sees. Nothing more.
 
-- Test from a real user's perspective only — you see what a real member sees
-- Log into the QA community with your Circle account
+- Log into the QA community at [qa.reppedlabs.org](https://qa.reppedlabs.org/feed)
 - Navigate to the Circle post or space linked in the QA task
-- The test areas in the issue are a starting point — go further
+- The test areas listed are a starting point — go further
 
 **Always worth trying on any task:**
 - Reload the page mid-action — does state persist?
@@ -74,17 +74,49 @@ You are doing **blackbox testing**:
 
 ---
 
+## How to report your findings
+
+When you finish testing a task — or hit a natural stopping point — **add a comment on the issue**. Do not close it. Trinity reviews your comment and handles next steps.
+
+**If you found no issues:**
+```
+Tested on Chrome 124 / macOS in the QA community.
+
+Checked:
+- Task completion persists on reload ✓
+- Notes save correctly ✓
+- Theme sticks across sessions ✓
+- Tested on Firefox too ✓
+
+Nothing found.
+```
+
+**If you found bugs:**
+```
+Found 2 issues — filed separately:
+
+- #47 — task checkbox resets on reload (High)
+- #48 — accent color lost after 10 min (Medium)
+
+Loom of both: loom.com/...
+```
+
+That's it. Add the comment, leave the issue open. Trinity takes it from there.
+
+---
+
 ## How to file a bug
 
-Use the **Bug Report** issue template. Every field is required — incomplete reports get sent back.
+Every bug gets its own GitHub Issue using the **Bug Report** template.
 
-**Loom is required for every bug.** Record your screen showing the bug happening. Paste the Loom link in the Screenshot field. No Loom = report gets sent back.
+**Loom is required for every bug.** Record your screen showing the bug happening. Paste the link. No Loom = report gets sent back.
 
-**Title format:** Start with the feature, not "It" or "The". Example — "Task checkbox does not persist after reload."
+**Title:** Start with the feature, not "It" or "The."
+Example — "Task checkbox does not persist after reload."
 
-**Link every bug to its QA task** — write `Relates to #[issue number]` in the report.
+**Link it back:** Write `Relates to #[QA task number]` in the report.
 
-**One issue per bug.** Never combine multiple bugs into one report.
+**One issue per bug.** Never combine.
 
 **Severity:**
 
@@ -99,46 +131,13 @@ When in doubt, go one level higher.
 
 ---
 
-## How to close a task
-
-Always close with a comment — pass or fail.
-
-**If everything passed:**
-```
-QA passed. Tested on Chrome 124 / macOS in the QA community.
-
-Checked:
-- Task completion persists on reload ✓
-- Notes save correctly ✓
-- Theme sticks across sessions ✓
-- Tested on Firefox too ✓
-
-No issues found.
-```
-
-Change label to `status: qa passed`.
-
-**If you found bugs:**
-```
-QA failed. Found 2 issues:
-
-- #47 — task checkbox resets on reload (High) [Loom: loom.com/...]
-- #48 — accent color lost after 10 min (Medium) [Loom: loom.com/...]
-
-#47 is a blocker.
-```
-
-Change label to `status: qa failed`. Trinity fixes → task reopens → you re-test.
-
----
-
 ## Rules
 
 - **Pick up anything on the board.** No gating, no prerequisites.
 - **Loom every bug.** No exceptions. No Loom = report sent back.
 - **One task at a time.**
 - **One bug = one issue.** Never combine.
-- **Never close without a comment.**
-- **Never test on production.** QA community only — the link is in the task.
+- **Comment, don't close.** Trinity handles closing and status.
+- **Never test on production.** QA community only — [qa.reppedlabs.org](https://qa.reppedlabs.org/feed)
 - **Stale items = priority.** `stale` label means it's been waiting 3+ days — clear it first.
 - **Ask before skipping.** Comment on the issue and tag Trinity.

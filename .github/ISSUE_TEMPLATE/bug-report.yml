@@ -31,7 +31,7 @@ body:
     attributes:
       label: Staging URL
       description: The exact Circle page URL where you found this. Always the QA community — never production.
-      placeholder: "https://circles.reppedlabs.org/c/qa-staging/..."
+      placeholder: "https://qa.reppedlabs.org/feed"
     validations:
       required: true
 
