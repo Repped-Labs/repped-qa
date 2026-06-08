@@ -110,9 +110,9 @@ body:
   - type: textarea
     id: evidence
     attributes:
-      label: Screenshot
-      description: One screenshot showing the moment the bug occurs. Add an arrow or circle if it helps. Loom recording strongly preferred for interactive bugs — paste the link here.
-      placeholder: "Attach screenshot or paste Loom link."
+      label: Loom recording
+      description: "Required — record your screen showing the bug happening and paste the Loom link here. No Loom = this report gets sent back. Go to loom.com, hit Record, reproduce the bug, stop recording, paste the link."
+      placeholder: "https://www.loom.com/share/..."
     validations:
       required: true
 

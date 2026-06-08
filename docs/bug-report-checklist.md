@@ -11,6 +11,6 @@ Run this before you submit every bug report. If any item is unchecked, fix it fi
 - [ ] Severity is chosen — Critical / High / Medium / Low — with a one-sentence reason
 - [ ] Workaround is filled in — describe it if one exists, or write "None"
 - [ ] Environment is filled in — browser and operating system
-- [ ] Screenshot is attached — showing the moment the bug occurs
+- [ ] Loom recording is included — link pasted in the report showing the bug happening. No Loom = report gets sent back.
 
 > A bug report that cannot be reproduced is not a bug report. It is a note to yourself.
